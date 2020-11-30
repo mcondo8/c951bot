@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>I'm sorry, I don't quite undertand. I can help you choose a career, or tell you about some career options. How can I help you today?</template>
+  </category>
+
+   <category>
+       <pattern>INITIAL BOT MESSAGE</pattern>
+       <template>Hi there!</template>
+   </category>
+</aiml>

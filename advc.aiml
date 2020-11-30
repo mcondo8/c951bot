@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	  <category>
+      <pattern>CAROPTS</pattern>
+      <template>Great! I can tell you about the following careers: 
+      <button>
+          <text>Software Developer</text>
+          <postback>SWDEV</postback>
+      </button>
+      <button>
+          <text>Database Administrator / DBA</text>
+          <postback>DBA</postback>
+      </button>
+      <button>
+          <text>Embedded Systems Developer</text>
+          <postback>EMBSYS</postback>
+      </button>
+      <button>
+          <text>Hardware Developer</text>
+          <postback>HWDEV</postback>
+      </button>
+      <button>
+          <text>Network Architect</text>
+          <postback>NETARCH</postback>
+      </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>SWDEV</pattern>
+      <template>
+          <random>
+              <li>Cool! </li>
+              <li>Great! </li>
+              <li>Nice! </li>
+              <li>Let's see... </li>
+          </random>
+          
+          Software developers conceive of, design, and build computer programs. Some develop new applications for mobile or desktop use, while others build underlying operating systems. Either way, software developers identify user needs, build programs, test out new software, and make improvements. Working closely with computer programmers, software developers fill crucial roles in the computer systems, manufacturing, finance, and software publishing industries.
+          <br/>
+          <link>
+              <text>You can find more information about software development here!</text>
+              <url>https://en.wikipedia.org/wiki/Programmer</url>
+          </link>
+          <srai>CAROPTS</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>DBA</pattern>
+      <template>
+        <random>
+            <li>Cool! </li>
+            <li>Great! </li>
+            <li>Nice! </li>
+            <li>Let's see... </li>
+        </random>
+          
+      Database administrators or managers create and maintain databases compatible with their companies’ needs. These information technology (IT) professionals oversee database updates, storage, security, and troubleshooting.
+      
+      <link>
+          <text>You can learn more about database administration here!</text>
+          <url>https://en.wikipedia.org/wiki/Database_administration</url>
+      </link>
+      <srai>CAROPTS</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>EMBSYS</pattern>
+      <template>
+        <random>
+            <li>Cool! </li>
+            <li>Great! </li>
+            <li>Nice! </li>
+            <li>Let's see... </li>
+        </random>
+          
+        Embedded Systems Designers work on the hardware and software that goes into Embedded Systems - small, specialized computers embedded in other, larger systems. Working with embedded systems you might design engine control modules for cars, auto-pilot systems for airplanes, or even control panels for microwaves.
+        <br></br>
+        <link>
+            <text>You can learn more about embedded systems design here!</text>
+            <url>https://www.elprocus.com/embedded-system-design/</url>
+        </link>
+        <srai>CAROPTS</srai>
+        </template>
+  </category>
+  
+  <category>
+      <pattern>NETARCH</pattern>
+      <template>
+          <random>
+              <li>Cool! </li>
+              <li>Great! </li>
+              <li>Nice! </li>
+              <li>Let's see... </li>
+          </random>
+          
+          A computer network architect designs and builds data communication networks, ranging form local area network to the backbone interlinks that make up the internet.
+          <br/>
+          <link>
+              <text>You can find more information about network architecture here!</text>
+              <url>https://www.careerexplorer.com/careers/computer-network-architect/</url>
+          </link>
+          <srai>CAROPTS</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>HWDEV</pattern>
+      <template>
+          <random>
+              <li>Cool! </li>
+              <li>Great! </li>
+              <li>Nice! </li>
+              <li>Let's see... </li>
+          </random>
+          Computer hardware engineers create the physical components that make computers run. They design new hardware systems, test their designs, analyze their test results, and manage manufacturing for completed projects. When new software changes users’ needs, these professionals redesign hardware to work with the new programs.
+          <link>
+              <text>You can find more information about hardware engineering here!</text>
+              <url>https://www.computerscience.org/careers/computer-hardware-engineer/</url>
+          </link>
+          <srai>CAROPTS</srai>
+      </template>
+  </category>
+</aiml>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+      <pattern>HI ^</pattern>
+      <template><srai>GREET</srai></template>
+  </category>
+    <category>
+      <pattern>HELLO ^</pattern>
+      <template><srai>GREET</srai></template>
+  </category>
+    <category>
+      <pattern>GOOD MORNING ^</pattern>
+      <template><srai>GREET</srai></template>
+  </category>
+    <category>
+      <pattern>GOOD EVENING ^</pattern>
+      <template><srai>GREET</srai></template>
+  </category>
+  <category>
+      <pattern>GOOD DAY ^</pattern>
+      <template><srai>GREET</srai></template>
+  </category>
+    <category>
+      <pattern>GOOD AFTERNOON ^</pattern>
+      <template><srai>GREET</srai></template>
+  </category>
+    <category>
+      <pattern>YO ^</pattern>
+      <template><srai>GREET</srai></template>
+  </category>
+  
+  <category>
+      <pattern>GREET</pattern>
+      <template>Hey! I'm 951Bot! It's great to meet you. What is your name?</template>
+  </category>
+  
+  <category>
+      <pattern>MY NAME IS ^</pattern>
+      <template>
+          <think> <set name = "SNAME"><star/></set></think>
+          <srai>INTRODUCE</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>*</pattern>
+      <that>WHAT IS YOUR NAME</that>
+      <template>
+          <think> <set name = "SNAME"><star/></set></think>
+          <srai>INTRODUCE</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>I AM *</pattern>
+      <template>
+          <think> <set name = "SNAME"><star/></set></think>
+          <srai>INTRODUCE</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>HI ^</pattern>
+      <that>WHAT IS YOUR NAME</that>
+      <template><srai>REINTRO</srai></template>
+  </category>
+  
+  <category>
+      <pattern>HEY ^</pattern>
+      <that>WHAT IS YOUR NAME</that>
+      <template><srai>REINTRO</srai></template>
+  </category>
+  
+  <category>
+      <pattern>HELLO ^</pattern>
+      <that>WHAT IS YOUR NAME</that>
+      <template><srai>REINTRO</srai></template>
+  </category>
+  
+  
+  
+  <category>
+      <pattern>REINTRO</pattern>
+      <template>Hi again! What is your name?</template>
+    </category>
+  
+  <category>
+      <pattern>INTRODUCE</pattern>
+      <that>WHAT IS YOUR NAME</that>
+      <template>Hi <get name="SNAME"></get>! How can I help you today?</template>
+  </category>
+  
+  <category>
+      <pattern>^ CHOOSE ^ CAREER ^</pattern>
+      <template><srai>CARHELP</srai></template>
+  </category>
+  
+  <category>
+      <pattern>^ TEACH ^</pattern>
+      <template><srai>CAROPTS</srai></template>
+  </category>
+  
+  <category>
+      <pattern>^ CAREER ^ OPTIONS ^</pattern>
+      <template><srai>CAROPTS</srai></template>
+  </category>
+  
+  
+  
+  <category>
+      <pattern>*</pattern>
+      <that>HOW CAN I HELP YOU TODAY</that>
+      <template>I can help you choose a career, or tell you about some career options. How can I help you today?</template>
+  </category>
+  
+
+
+    <category>
+      <pattern>CARHELP</pattern>
+      <template>Awesome! Let me ask you a few quick questions!<br />
+      <srai>Q1</srai>
+      </template>
+    </category>
+     
+<category>
+    <pattern>^ BYE</pattern>
+    <template><srai>EXIT</srai></template>
+</category>
+
+<category>
+    <pattern>^ GOODBYE</pattern>
+    <template><srai>EXIT</srai></template>
+</category>
+
+<category>
+    <pattern>^ SEE YA</pattern>
+    <template><srai>EXIT</srai></template>
+</category>
+
+<category>
+    <pattern>EXIT</pattern>
+    <template>
+        Thanks for checking in <get name="SNAME"></get>. See you again soon!
+        <think><set name="SNAME"></set></think>
+        
+    </template>
+</category>
+</aiml>

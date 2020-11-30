@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+    <pattern>Q1</pattern>
+    <template>
+        Do you like working with software or hardware more?
+        <button>
+            <text>Hardware</text>
+            <postback>hwint</postback>
+        </button>
+        <button>
+            <text>Software</text>
+            <postback>swint</postback>
+        </button>
+    </template>
+    </category>
+    
+    <category>
+        <pattern>hwint</pattern>
+        <template>
+            Hardware can be lots of fun, and there are many rewarding CS careers that include working directly with hardware. <br />
+            Do you like reading data sheets and timing diagrams, or are you more comfortable with plug-n-play hardware?
+            <button>
+                <text>I love timing diagrams - I'm a MOSI Master!</text>
+                <postback>FINQ HWDEV</postback>
+            </button>
+            <button>
+                <text>I don't really like the sqiggly lines, but I love running wires!</text>
+                <postback>FINQ NETADIN</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>swint</pattern>
+        <template>
+            There's room for all kinds of careers dealing with Software. <br />
+            Do you also enjoy soldering, or would you rather stick to your keyboard?
+            <button>
+                <text>I love soldering! They fumes help me think!</text>
+                <postback>FINQ EMBSYS</postback>
+            </button>
+            
+            <button>
+                <text>I really don't like soldering, plus I keep grabbing the wrong end of the iron.</text>
+                <postback>SWCLAR</postback>
+            </button>
+        </template>
+    </category>
+    
+    
+    
+    <category>
+        <pattern>FINQ *</pattern>
+        <template>
+            <think><set name="carchoice"> <star /></set></think>
+            Awesome! We're narrowing it down. Which of these programming languages do you enjoy the most?
+             <button>
+                <text>JavaScript</text>
+                <postback>FINALANS JAVASCRIPT</postback>
+            </button>
+            <button>
+                <text>Python</text>
+                <postback>FINALANS PYTHON</postback>
+            </button>
+            <button>
+                <text>java</text>
+                <postback>FINALANS JAVA</postback>
+            </button>
+            <button>
+                <text>C++</text>
+                <postback>FINALANS C</postback>
+            </button>
+            <button>
+                <text>SQL</text>
+                <postback>FINALANS SQL</postback>
+            </button>
+            <button>
+                <text>C#</text>
+                <postback>FINALANS CSHARP</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>SWCLAR</pattern>
+        <template>
+            Do you prefer creating new programs to help users get stuff done, or do you like working with data to enable other business?
+            <button>
+                <text>I really like designing new programs!</text>
+                <postback>FINQ SWDEV</postback>
+            </button>
+            <button>
+                <text>I love getting a report to all add up correctly!</text>
+                <postback>FINQ DBA</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>FINALANS *</pattern>
+        <template>
+            <think><set name="PREFLANG"><star /></set></think>
+            <condition name="CARCHOICE" value="HWDEV">
+                It sounds like you're really interested in hardware development. 
+                <condition name="PREFLANG">
+                    <li value="C"> It also sounds like you're learning all the right langauges - you're on the right track!</li>
+                    <li> Just make sure you learn C or C++! Most Hardware Developers find it really useful!</li>
+                </condition>
+                <srai>HWDEV</srai>
+            </condition>
+            
+             <condition name="CARCHOICE" value="NETADMIN">
+                It sounds like you'd make a great Network Architect!
+                <condition name="PREFLANG">
+                    <li value="PYTHON"> Python will really help you along the way, but a lot of network tools use Java as well. Make sure you're learning both!</li>
+                    <li value="JAVA"> Java will really help you along the way, but a lot of network tools use Python as well. Make sure you're learning both!</li>
+                    <li><br/>Just a quick hint - most network designers end up using Python and Java. Make sure you're learning the right languages!</li>
+                </condition>
+                <srai>NETARCH</srai>
+             </condition>
+             
+             <condition name="CARCHOICE" value="EMBSYS">
+                It sounds like you'd love Embedded Systems Design!
+                <condition name="PREFLANG">
+                    <li value="C"> It also sounds like you're learning all the right langauges - you're on the right track!</li>
+                    <li> Just make sure you learn C or C++! Most Embedded Systems Developers find it really useful!</li>
+                </condition>
+                <srai>EMBSYS</srai>
+             </condition>
+             
+              <condition name="CARCHOICE" value="SWDEV">
+                I think you'd be really interested in Software Development!
+                <condition name="PREFLANG">
+                    <li value="SQL"> A lot of desktop development also uses SQL, so you're right on track. Make sure you keep up on your Java as well.</li>
+                    <li value="JAVA"> A lot of desktop development is done in Java, but you'll need to be sharp with SQL as well. Keep up the great work!</li>
+                    <li><br/>Just a quick hint - most Software Developers end up using SQL and Java. Make sure you're learning the right languages!</li>
+                </condition>
+                <srai>SWDEV</srai>
+               </condition>
+               
+               <condition name="CARCHOICE" value="DBA">
+                Sound's like you could be an awesome Database Administrator!
+                <condition name="PREFLANG">
+                    <li value="SQL"> It's great you're up on SQL - that's used a lot in administering databases and designing reports!</li>
+                    <li> Make sure you keep practicing your SQL - most DBAs use it every day.</li>
+                </condition>
+                <srai>DBA</srai>
+               </condition>
+        </template>
+    </category>
+</aiml>
